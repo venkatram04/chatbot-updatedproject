@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Admission Enquiry Chatbot</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-robot"></i>
+        <h1>AI Admission Assistant</h1>
+      </div>
+      <nav class="desktop-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="registration.html">Registration</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="#" id="about-link">About</a>
+      </nav>
+      <button class="mobile-menu-btn">
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <i class="fa-solid fa-xmark close-icon hidden"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-nav hidden">
+    <a href="index.html" class="active">Home</a>
+    <a href="registration.html">Registration</a>
+    <a href="enquiry.html">Enquiry</a>
+    <a href="#" id="mobile-about-link">About</a>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="hero">
+        <h2>"Admission Assistance at Your Fingertips — Let's Get Started!"</h2>
+        <p>"Have questions about admissions? I'm here to guide you through everything"</p>
+      </div>
+
+      <div class="college-selector">
+        <label for="college-select">Select a College to Get Started</label>
+        <div class="select-wrapper">
+          <select id="college-select">
+            <option value="">Select a College</option>
+            <option value="1">Sathyabama University</option>
+            <option value="2">Indian Institute of Technology Bombay</option>
+            <option value="3">Indian Institute of Technology Madras</option>
+            <option value="4">Indian Institute of Technology Kanpur</option>
+            <option value="5">Indian Institute of Technology Kharagpur</option>
+            <option value="6">Delhi University</option>
+            <option value="7">Anna University</option>
+            <option value="8">Jadavpur University</option>
+            <option value="9">Banaras Hindu University</option>
+            <option value="10">Vellore Institute of Technology</option>
+          </select>
+          <div class="loading-spinner hidden"></div>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <h3>Course Information</h3>
+          <p>Get details about various courses, eligibility criteria, and duration.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Fee Structure</h3>
+          <p>Learn about tuition fees, scholarships, and payment options.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Campus Facilities</h3>
+          <p>Explore campus amenities, hostels, labs, and other infrastructure.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button class="chat-button" aria-label="Open chat">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <div class="chat-window hidden">
+    <div class="chat-header">
+      <div class="chat-title">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Admission Assistant</h3>
+      </div>
+      <button class="close-chat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="chat-college-selector">
+      <select id="chat-college-select">
+        <option value="">Select a College</option>
+        <option value="1">Sathyabama University</option>
+        <option value="2">Indian Institute of Technology Bombay</option>
+        <option value="3">Indian Institute of Technology Madras</option>
+        <option value="4">Indian Institute of Technology Kanpur</option>
+        <option value="5">Indian Institute of Technology Kharagpur</option>
+        <option value="6">Delhi University</option>
+        <option value="7">Anna University</option>
+        <option value="8">Jadavpur University</option>
+        <option value="9">Banaras Hindu University</option>
+        <option value="10">Vellore Institute of Technology</option>
+      </select>
+      <div class="chat-loading-spinner hidden"></div>
+    </div>
+
+    <div class="chat-messages">
+      <div class="empty-message">Please select a college to start chatting</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" placeholder="Type your question here..." disabled>
+      <button disabled>
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- About Popup -->
+  <div id="about-overlay" class="overlay">
+    <div class="popup-message1">
+      <a href="#" id="close-popup" class="close-button">&times;</a>
+      <p>
+        The Admission Enquiry Chatbot is designed to streamline the information-gathering process for prospective students and their parents, making it easier to navigate the complexities of the admission process. As educational institutions face a growing number of inquiries each year, the need for efficient, accessible, and responsive communication channels has become increasingly important.<br/> <br/> 
+        
+        This chatbot leverages natural language processing (NLP) and machine learning algorithms to provide real-time, accurate information about admission procedures, eligibility criteria, important deadlines, course offerings, fee structures, and more. By simulating human-like conversations, the chatbot can answer frequently asked questions, guide users through application procedures, and even help schedule campus visits. The integration of a user-friendly interface ensures that even those with limited technical knowledge can easily interact with the system. <br/> <br/> 
+        
+        Furthermore, the chatbot is designed to handle a large volume of inquiries simultaneously, providing immediate responses that significantly reduce the workload on administrative staff. The adaptability of the chatbot allows it to be customized to the specific needs of different educational institutions, ensuring that it provides relevant and institution-specific information. This system also includes a feedback mechanism to continuously improve its performance based on user interactions. <br/><br/> 
+        
+        In addition to serving as an information hub, the chatbot can collect data on user interactions, helping institutions understand common concerns and areas of interest among prospective students. This data can be invaluable for improving the overall admissions process and tailoring marketing efforts. Overall, the Admission Enquiry Chatbot represents a significant advancement in how educational institutions engage with prospective students, offering a blend of efficiency, accuracy, and accessibility that is essential in today's digital age.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h2>AI Admission Assistant</h2>
+          <p>Your guide to college admissions</p>
+        </div>
+        <div class="footer-links">
+          <div class="link-group">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#" id="footer-about-link">About Us</a></li>
+              <li><a href="enquiry.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Connect</h3>
+            <ul>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; <span id="current-year"></span> AI Admission Assistant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // DOM Elements
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const chatButton = document.querySelector('.chat-button');
+    const chatWindow = document.querySelector('.chat-window');
+    const closeChat = document.querySelector('.close-chat');
+    const collegeSelect = document.getElementById('college-select');
+    const chatCollegeSelect = document.getElementById('chat-college-select');
+    const loadingSpinner = document.querySelector('.loading-spinner');
+    const chatLoadingSpinner = document.querySelector('.chat-loading-spinner');
+    const chatMessages = document.querySelector('.chat-messages');
+    const chatInput = document.querySelector('.chat-input input');
+    const sendButton = document.querySelector('.chat-input button');
+    const currentYear = document.getElementById('current-year');
+    const aboutLink = document.getElementById('about-link');
+    const mobileAboutLink = document.getElementById('mobile-about-link');
+    const footerAboutLink = document.getElementById('footer-about-link');
+    const aboutOverlay = document.getElementById('about-overlay');
+    const closePopupBtn = document.getElementById('close-popup');
+
+    // Set current year in footer
+    currentYear.textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Chat window toggle
+    chatButton.addEventListener('click', () => {
+      chatWindow.classList.toggle('hidden');
+    });
+
+    closeChat.addEventListener('click', () => {
+      chatWindow.classList.add('hidden');
+    });
+
+    // About popup handlers
+    aboutLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      aboutOverlay.classList.add('active');
+    });
+
+    mobileAboutLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      aboutOverlay.classList.add('active');
+    });
+
+    footerAboutLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      aboutOverlay.classList.add('active');
+    });
+
+    closePopupBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      aboutOverlay.classList.remove('active');
+    });
+
+    // Populate college dropdowns
+    function populateCollegeDropdowns() {
+      // Simulate loading
+      loadingSpinner.classList.remove('hidden');
+      chatLoadingSpinner.classList.remove('hidden');
+      collegeSelect.disabled = true;
+      chatCollegeSelect.disabled = true;
+      
+      setTimeout(() => {
+        // Hide loading spinners
+        loadingSpinner.classList.add('hidden');
+        chatLoadingSpinner.classList.add('hidden');
+        collegeSelect.disabled = false;
+        chatCollegeSelect.disabled = false;
+      }, 1000); // Simulate network delay
+    }
+
+    // Handle college selection
+    let selectedCollege = null;
+
+    function handleCollegeSelection(selectElement) {
+      const collegeId = parseInt(selectElement.value);
+      
+      // Update both dropdowns
+      collegeSelect.value = collegeId || '';
+      chatCollegeSelect.value = collegeId || '';
+      
+      // Clear chat messages
+      chatMessages.innerHTML = '';
+      
+      if (collegeId) {
+        selectedCollege = collegeId;
+        
+        // Enable chat input
+        chatInput.disabled = false;
+        sendButton.disabled = false;
+        
+        // Add welcome message
+        const collegeName = collegeSelect.options[collegeSelect.selectedIndex].text;
+        addBotMessage(`Welcome to our college admission assistant! How can I help you with information about ${collegeName}?`);
+      } else {
+        selectedCollege = null;
+        
+        // Disable chat input
+        chatInput.disabled = true;
+        sendButton.disabled = true;
+        
+        // Show empty message
+        chatMessages.innerHTML = '<div class="empty-message">Please select a college to start chatting</div>';
+      }
+    }
+
+    collegeSelect.addEventListener('change', () => handleCollegeSelection(collegeSelect));
+    chatCollegeSelect.addEventListener('change', () => handleCollegeSelection(chatCollegeSelect));
+
+    // Chat functionality
+    function addUserMessage(text) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message user-message';
+      
+      messageDiv.innerHTML = `
+        <div class="message-content">${text}</div>
+        <div class="message-info">You</div>
+      `;
+      
+      chatMessages.appendChild(messageDiv);
+      scrollToBottom();
+    }
+
+    function addBotMessage(text) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'message bot-message';
+      
+      messageDiv.innerHTML = `
+        <div class="message-content">${text}</div>
+        <div class="message-info">Assistant</div>
+      `;
+      
+      chatMessages.appendChild(messageDiv);
+      scrollToBottom();
+    }
+
+    function showTypingIndicator() {
+      const indicator = document.createElement('div');
+      indicator.className = 'typing-indicator';
+      indicator.innerHTML = `
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+      `;
+      
+      chatMessages.appendChild(indicator);
+      scrollToBottom();
+      return indicator;
+    }
+
+    function scrollToBottom() {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Process user message and generate response
+    function processMessage(message) {
+      if (!selectedCollege) return;
+      
+      const userMessage = message.toLowerCase();
+      const collegeName = collegeSelect.options[collegeSelect.selectedIndex].text;
+      let response = '';
+      
+      // Check for different query types
+      if (userMessage.match(/fee|cost|price|tuition/)) {
+        response = `The fee structure for ${collegeName} varies by program:\n\n`;
+        response += `- B.E. - Computer Science and Engineering: ₹150,000 per year\n`;
+        response += `- B.E. - Computer Science with AI: ₹175,000 per year\n`;
+        response += `- B.E. - Computer Science with Data Science: ₹180,000 per year\n`;
+        response += `- B.E. - Electronics and Communication: ₹140,000 per year\n`;
+        response += `- B.E. - Mechanical Engineering: ₹130,000 per year\n`;
+        response += `- M.Tech - Computer Science: ₹200,000 per year\n`;
+        response += `- M.Tech - Electronics: ₹190,000 per year\n`;
+        response += `- Ph.D - Computer Science: ₹100,000 per year\n`;
+      }
+      else if (userMessage.match(/course|program|degree|branch/)) {
+        response = `${collegeName} offers the following courses:\n\n`;
+        response += `- B.E. - Computer Science and Engineering (4 years)\n`;
+        response += `- B.E. - Computer Science with AI (4 years)\n`;
+        response += `- B.E. - Computer Science with Data Science (4 years)\n`;
+        response += `- B.E. - Electronics and Communication (4 years)\n`;
+        response += `- B.E. - Mechanical Engineering (4 years)\n`;
+        response += `- M.Tech - Computer Science (2 years)\n`;
+        response += `- M.Tech - Electronics (2 years)\n`;
+        response += `- Ph.D - Computer Science (3-5 years)\n`;
+      }
+      else if (userMessage.match(/eligibility|criteria|requirement|qualify/)) {
+        response = `Eligibility criteria for courses at ${collegeName}:\n\n`;
+        response += `- B.E. Programs: 10+2 with PCM, minimum 60%\n`;
+        response += `- M.Tech Programs: B.E./B.Tech with minimum 60%\n`;
+        response += `- Ph.D Programs: M.Tech/M.E. with minimum 65%\n`;
+      }
+      else if (userMessage.match(/location|address|place|city/)) {
+        const locations = {
+          1: "Chennai",
+          2: "Mumbai",
+          3: "Chennai",
+          4: "Kanpur",
+          5: "Kharagpur",
+          6: "New Delhi",
+          7: "Chennai",
+          8: "Kolkata",
+          9: "Varanasi",
+          10: "Vellore"
+        };
+        response = `${collegeName} is located in ${locations[selectedCollege]}.`;
+      }
+      else if (userMessage.match(/rank|ranking|position/)) {
+        response = `${collegeName} has a national ranking of ${selectedCollege}.`;
+      }
+      else if (userMessage.match(/facility|facilities|amenities|infrastructure/)) {
+        response = `Facilities available at ${collegeName} include: Library, Sports Complex, Labs, Hostels, Cafeteria`;
+      }
+      else if (userMessage.match(/website|site|link|url/)) {
+        const websites = {
+          1: "https://www.sathyabama.ac.in/",
+          2: "https://www.iitb.ac.in/",
+          3: "https://www.iitm.ac.in/",
+          4: "https://www.iitk.ac.in/",
+          5: "https://www.iitkgp.ac.in/",
+          6: "http://www.du.ac.in/",
+          7: "https://www.annauniv.edu/",
+          8: "http://www.jaduniv.edu.in/",
+          9: "https://www.bhu.ac.in/",
+          10: "https://vit.ac.in/"
+        };
+        response = `You can visit the official website of ${collegeName} at: ${websites[selectedCollege]}`;
+      }
+      else if (userMessage.match(/duration|years|time|period/)) {
+        response = `Course durations at ${collegeName}:\n\n`;
+        response += `- B.E. Programs: 4 years\n`;
+        response += `- M.Tech Programs: 2 years\n`;
+        response += `- Ph.D Programs: 3-5 years\n`;
+      }
+      else if (userMessage.match(/about/)){
+        response = `1. Sathyabama Institute of Science and Technology (formerly Sathyabama University) is a deemed-to-be university located in Chennai, Tamil Nadu.  
+                    2. It was established in 1987 and is known for its excellence in engineering, technology, and research.  
+                    3. The university offers undergraduate, postgraduate, and doctoral programs across various disciplines, including engineering, management, and life sciences.  
+                    4. It has a well-equipped campus with modern infrastructure, research centers, and collaborations with global institutions.  
+                    5. Sathyabama is recognized by UGC, accredited by NAAC, and has a strong placement record with top recruiters.`;
+      }
+      else {
+        response = `Welcome to ${collegeName} information service! You can ask about:\n\n` +
+                  "- Courses offered\n" +
+                  "- Fee structure\n" +
+                  "- Eligibility criteria\n" +
+                  "- Location\n" +
+                  "- Ranking\n" +
+                  "- Facilities\n" +
+                  "- Website\n" +
+                  "- Course duration";
+      }
+      
+      return response.replace(/\n/g, '<br>');
+    }
+
+    // Send message
+    function sendMessage() {
+      const message = chatInput.value.trim();
+      if (!message || !selectedCollege) return;
+      
+      // Add user message
+      addUserMessage(message);
+      chatInput.value = '';
+      
+      // Show typing indicator
+      const indicator = showTypingIndicator();
+      
+      // Process message and respond (with delay for natural feel)
+      setTimeout(() => {
+        // Remove typing indicator
+        indicator.remove();
+        
+        // Add bot response
+        const response = processMessage(message);
+        addBotMessage(response);
+      }, 1000);
+    }
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      populateCollegeDropdowns();
+    });
+  </script>
+</body>
+</html>
